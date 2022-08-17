@@ -22,10 +22,10 @@ public class OperatorConditional {
         falseOrFalse = bFalse || bFalse;
 
         System.out.printf("%nOperator conditional ||%n");
-        System.out.printf("%-5b || %-5b -> %-5b%n", bTrue, bTrue, trueOrTrue);
-        System.out.printf("%-5b || %-5b -> %-5b%n", bTrue, bFalse, trueOrFalse);
-        System.out.printf("%-5b || %-5b -> %-5b%n", bFalse, bTrue, falseOrTrue);
-        System.out.printf("%-5b || %-5b -> %-5b%n", bFalse, bFalse, falseOrFalse);
+        System.out.printf("%-5b || %-5b -> %b%n", bTrue, bTrue, trueOrTrue);
+        System.out.printf("%-5b || %-5b -> %b%n", bTrue, bFalse, trueOrFalse);
+        System.out.printf("%-5b || %-5b -> %b%n", bFalse, bTrue, falseOrTrue);
+        System.out.printf("%-5b || %-5b -> %b%n", bFalse, bFalse, falseOrFalse);
 
         int maxSpeed = 100;
         int currentSpeed = 90;
