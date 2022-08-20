@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+/**
+ * Lesson05Exercise052022S3020
+ * made with love g-ramadhani <3
+ */
+public class Lesson05Exercise052022S3020 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        char[] ascii = {0x221A, 0x00B2, 0x2500, 0x005F, 0x00A0};
+                     //{akar, pangkat 2, garis tengah, underline, spasi}
+        double a, b, c, x1, x2;
+
+        System.out.printf("%nProgram persamaan kuadrat%n");
+        System.out.printf("%nRumus%n-----%n");
+        System.out.printf("ax%c + bx + c = 0%n", ascii[1]);
+        System.out.printf("%nSyarat%n------%n");
+        System.out.printf("a <> 0%n");
+        System.out.printf("b%c - 4ac >= 0%n", ascii[1]);
+        System.out.printf("%nHasil%n-----%n");
+        System.out.printf("%12c%c%c%c%c%c%c%c%c%n", ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3]);
+        System.out.printf("%5c-b + %c b%c - 4ac%n", ascii[4], ascii[0], ascii[1]);
+        System.out.printf("x1 = %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%n", ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2]);
+        System.out.printf("%11c2a%n", ascii[4]);
+        System.out.printf("%12c%c%c%c%c%c%c%c%c%n", ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3]);
+        System.out.printf("%5c-b - %c b%c - 4ac%n", ascii[4], ascii[0], ascii[1]);
+        System.out.printf("x2 = %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%n", ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2]);
+        System.out.printf("%11c2a%n", ascii[4]);
+
+        System.out.printf("%nIsi nilai a,b, dan c%n");
+        System.out.printf("--------------------%n");
+        
+        do {
+            System.out.printf("a : ");
+            a = scanner.nextDouble();
+            if (a == 0) {
+                System.out.printf("a tidak boleh = 0%n%n");
+            } else {
+                break;
+            }
+        } while (true);
+
+        System.out.printf("b : ");
+        b = scanner.nextDouble();
+        System.out.printf("c : ");
+        c = scanner.nextDouble();
+
+        if ((b * b)- (4 * a * c) < 0) {
+            System.out.printf("Persamaan tidak memiliki hasil karena b%c - 4ac < 0%n", ascii[1]);
+        } else {
+            x1 = ((-b + Math.sqrt((b * b)- (4 * a * c))) / (2 * a));
+    
+            System.out.printf("%12c%c%c%c%c%c%c%c%c%10c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%n", ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3]);
+            System.out.printf("%5c-b + %c b%c - 4ac %2c-%.0f + %c %.0f%c - 4 x %.0f x %.0f%n", ascii[4], ascii[0], ascii[1], ascii[4], b, ascii[0], b, ascii[1], a, c);
+            System.out.printf("x1 = %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c = %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%n", ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2]);
+            System.out.printf("%11c2a%19c2 x %.0f%n", ascii[4], ascii[4], a);
+            System.out.printf("x1 = %.2f%n",x1);
+    
+            x2 = ((-b - Math.sqrt((b * b)- (4 * a * c))) / (2 * a)); 
+    
+            System.out.printf("%12c%c%c%c%c%c%c%c%c%10c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%n", ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3], ascii[3]);
+            System.out.printf("%5c-b - %c b%c - 4ac %2c-%.0f - %c %.0f%c - 4 x %.0f x %.0f%n", ascii[4], ascii[0], ascii[1], ascii[4], b, ascii[0], b, ascii[1], a, c);
+            System.out.printf("x1 = %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c = %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%n", ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2], ascii[2]);
+            System.out.printf("%11c2a%19c2 x %.0f%n", ascii[4], ascii[4], a);
+            System.out.printf("x2 = %.2f%n",x2);  
+        }
+
+    }
+}
