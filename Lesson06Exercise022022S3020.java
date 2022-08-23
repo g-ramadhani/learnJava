@@ -40,13 +40,25 @@ public class Lesson06Exercise022022S3020 {
         while (kondisi) {
             kondisi = false;
             for (count = 0;count < jumlahPelajaran-1;count++){
-                if (hasilUjian[count][1].compareToIgnoreCase(hasilUjian[count+1][1]) < 0) {
-                    temp = hasilUjian[count][1];
-                    temp1 = hasilUjian[count][0];
+                if (hasilUjian[count][1].compareToIgnoreCase(hasilUjian[count+1][1]) < 0 && !hasilUjian[count][1].equalsIgnoreCase("100") && !hasilUjian[count+1][1].equalsIgnoreCase("100")) {
+                    temp1 = hasilUjian[count][1];
+                    temp = hasilUjian[count][0];
                     hasilUjian[count][1] = hasilUjian[count+1][1];
                     hasilUjian[count][0] = hasilUjian[count+1][0];
-                    hasilUjian[count+1][1] = temp;
-                    hasilUjian[count+1][0] = temp1;
+                    hasilUjian[count+1][1] = temp1;
+                    hasilUjian[count+1][0] = temp;
+                    kondisi = true;
+                }
+                else if (hasilUjian[0][1].equalsIgnoreCase("100")) {
+                    continue;
+                }
+                else if(hasilUjian[count+1][1].equalsIgnoreCase("100")){
+                    temp1 = hasilUjian[count][1];
+                    temp = hasilUjian[count][0];
+                    hasilUjian[count][1] = hasilUjian[count+1][1];
+                    hasilUjian[count][0] = hasilUjian[count+1][0];
+                    hasilUjian[count+1][1] = temp1;
+                    hasilUjian[count+1][0] = temp;
                     kondisi = true;
                 }
             }
