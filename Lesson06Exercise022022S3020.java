@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 
 /**
  * Lesson06Exercise022022S3020
@@ -10,7 +9,7 @@ public class Lesson06Exercise022022S3020 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[][] hasilUjian;
-        String inputData, namaSiswa, temp;
+        String inputData, namaSiswa, temp, temp1;
         int jumlahPelajaran, count;
         boolean kondisi = true;
 
@@ -36,7 +35,6 @@ public class Lesson06Exercise022022S3020 {
                 }
             }
 
-
         }
 
         while (kondisi) {
@@ -44,8 +42,11 @@ public class Lesson06Exercise022022S3020 {
             for (count = 0;count < jumlahPelajaran-1;count++){
                 if (hasilUjian[count][1].compareToIgnoreCase(hasilUjian[count+1][1]) < 0) {
                     temp = hasilUjian[count][1];
+                    temp1 = hasilUjian[count][0];
                     hasilUjian[count][1] = hasilUjian[count+1][1];
+                    hasilUjian[count][0] = hasilUjian[count+1][0];
                     hasilUjian[count+1][1] = temp;
+                    hasilUjian[count+1][0] = temp1;
                     kondisi = true;
                 }
             }
@@ -53,18 +54,21 @@ public class Lesson06Exercise022022S3020 {
 
         System.out.printf("%nInformasi Nilai Siswa%n");
         System.out.printf("Nama Siswa : %s%n", namaSiswa);
-        System.out.printf("%nHasil ujian pelajaran siswa diurutkan berdasarkan%n");
+        System.out.printf("%nHasil ujian pelajaran siswa diurutkan berdasarkan nilai tertinggi :%n");
         System.out.printf("No  Pelajaran       Nilai%n");
         System.out.printf("=========================%n");
 
         count = 1;
-        for (String[] hasil : hasilUjian) {
-            System.out.printf("%d %s%n", count, Arrays.toString(hasil));
-            count++;
-        }
-
         for (int i = 0;i < hasilUjian.length;i++){
-            System.out.println(Arrays.toString(hasilUjian[i]));
+            if(i >= 0){
+                System.out.printf("%3d ",count);
+            }
+            for (int j = 0;j < 2;j++){
+                System.out.printf("%-16s", hasilUjian[i][j]);
+            }
+            count++;
+            System.out.printf("%n");
         }
+        System.out.printf("=========================%n");
     }
 }
